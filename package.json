@@ -1,0 +1,19 @@
+{
+  "name": "gigit-backend",
+  "version": "1.0.0",
+  "description": "GigIt Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barpel/GigIt-backend.git"
+  },
+  "author": "Bar Peled, Gabi Chami, Jonathan Barr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Barpel/GigIt-backend/issues"
+  },
+  "homepage": "https://github.com/Barpel/GigIt-backend#readme"
+}
