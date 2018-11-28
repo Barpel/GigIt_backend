@@ -2,7 +2,8 @@ const userService = require('../services/user-service')
 const baseUrl = '/user'
 
 function addRoutes(app) {
-    app.get(baseUrl, (req, res) => {
+    app.get(`${baseUrl}`, (req, res) => {
+        // res.send('USER!')
         userService.query()
             .then(users => res.json(users))
     })
