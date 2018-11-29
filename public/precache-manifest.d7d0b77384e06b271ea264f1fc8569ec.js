@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/js/about.840fc2cb.js"
   },
   {
-    "revision": "63da906a2194febbcc7e",
-    "url": "/css/app.353113a2.css"
+    "revision": "f3b42ff1ccb8c2febf4f",
+    "url": "/css/app.bba6fca4.css"
   },
   {
-    "revision": "63da906a2194febbcc7e",
-    "url": "/js/app.5d17ddb3.js"
+    "revision": "f3b42ff1ccb8c2febf4f",
+    "url": "/js/app.087df8cd.js"
   },
   {
     "revision": "10da107bc51738cdd876",
@@ -72,6 +72,10 @@ self.__precacheManifest = [
     "url": "/img/delivery.72fdfe7a.jpg"
   },
   {
+    "revision": "ba7cd6c07f383e5667b6d6b24a841fc3",
+    "url": "/img/pet-care.ba7cd6c0.jpg"
+  },
+  {
     "revision": "bdadb6ce95c5a2e7b673940721450d3c",
     "url": "/fonts/fa-regular-400.bdadb6ce.woff2"
   },
@@ -124,10 +128,6 @@ self.__precacheManifest = [
     "url": "/img/fa-regular-400.0c419713.svg"
   },
   {
-    "revision": "ba7cd6c07f383e5667b6d6b24a841fc3",
-    "url": "/img/pet-care.ba7cd6c0.jpg"
-  },
-  {
     "revision": "42f9fd6acee87559ac0d6a33488db65e",
     "url": "/img/fa-brands-400.42f9fd6a.svg"
   },
@@ -136,7 +136,7 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.4478b4d7.svg"
   },
   {
-    "revision": "df4c4091d601ca4f9654e4edaaa99692",
+    "revision": "d89326e6883eb79ba48a75569e1d68a6",
     "url": "/index.html"
   },
   {

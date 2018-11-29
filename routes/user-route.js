@@ -1,5 +1,5 @@
 const userService = require('../services/user-service')
-const baseUrl = '/user'
+const baseUrl = '/api/user'
 
 function addRoutes(app) {
     app.get(`${baseUrl}`, (req, res) => {
