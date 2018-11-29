@@ -8,24 +8,32 @@ self.__precacheManifest = [
     "url": "/js/about.840fc2cb.js"
   },
   {
-    "revision": "ed66b2a4cbc6b69e9704",
-    "url": "/css/app.7aabd15b.css"
+    "revision": "63da906a2194febbcc7e",
+    "url": "/css/app.353113a2.css"
   },
   {
-    "revision": "ed66b2a4cbc6b69e9704",
-    "url": "/js/app.994900cd.js"
+    "revision": "63da906a2194febbcc7e",
+    "url": "/js/app.5d17ddb3.js"
   },
   {
-    "revision": "68e248196d0f9442b53b",
-    "url": "/css/chunk-vendors.5d9ba5ca.css"
+    "revision": "10da107bc51738cdd876",
+    "url": "/css/chunk-vendors.a62aa716.css"
   },
   {
-    "revision": "68e248196d0f9442b53b",
-    "url": "/js/chunk-vendors.ea054467.js"
+    "revision": "10da107bc51738cdd876",
+    "url": "/js/chunk-vendors.f02d6705.js"
   },
   {
     "revision": "9991dd43bb28f507fa1b6d9d0cd98f60",
     "url": "/img/mapDemo.9991dd43.png"
+  },
+  {
+    "revision": "2fad952a20fbbcfd1bf2ebb210dccf7a",
+    "url": "/fonts/element-icons.2fad952a.woff"
+  },
+  {
+    "revision": "6f0a76321d30f3c8120915e57f7bd77e",
+    "url": "/fonts/element-icons.6f0a7632.ttf"
   },
   {
     "revision": "7888389be60be9a49bdf888d1f9128a7",
@@ -62,10 +70,6 @@ self.__precacheManifest = [
   {
     "revision": "72fdfe7aeb3b93cb9a39990aa7229183",
     "url": "/img/delivery.72fdfe7a.jpg"
-  },
-  {
-    "revision": "ba7cd6c07f383e5667b6d6b24a841fc3",
-    "url": "/img/pet-care.ba7cd6c0.jpg"
   },
   {
     "revision": "bdadb6ce95c5a2e7b673940721450d3c",
@@ -120,6 +124,10 @@ self.__precacheManifest = [
     "url": "/img/fa-regular-400.0c419713.svg"
   },
   {
+    "revision": "ba7cd6c07f383e5667b6d6b24a841fc3",
+    "url": "/img/pet-care.ba7cd6c0.jpg"
+  },
+  {
     "revision": "42f9fd6acee87559ac0d6a33488db65e",
     "url": "/img/fa-brands-400.42f9fd6a.svg"
   },
@@ -128,11 +136,11 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.4478b4d7.svg"
   },
   {
-    "revision": "2b2ecc913e6a48093886ab722174adc2",
+    "revision": "df4c4091d601ca4f9654e4edaaa99692",
     "url": "/index.html"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "revision": "735ab4f94fbcd57074377afca324c813",
     "url": "/robots.txt"
   }
 ];
