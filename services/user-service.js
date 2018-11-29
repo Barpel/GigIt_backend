@@ -39,7 +39,7 @@ function remove(userId) {
 }
 
 function update(user) {
-    user.id = new ObjectId(user._id)
+    user._id = new ObjectId(user._id)
     return mongoService.connect()
         .then(db => {
             const collection = db.collection('user')
