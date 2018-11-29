@@ -12,7 +12,7 @@ app.use(cors({
     origin: ['http://localhost:8080'],
     credentials: true // enable set cookie
 }));
-app.use(express.static('public'))
+app.use(express.static('dist'))
 app.use(cookieParser());
 app.use(session({
     secret: 'gotta gigit',

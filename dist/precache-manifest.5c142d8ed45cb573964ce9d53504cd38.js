@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/js/about.840fc2cb.js"
   },
   {
-    "revision": "f3b42ff1ccb8c2febf4f",
-    "url": "/css/app.bba6fca4.css"
+    "revision": "1372fb22083e3a87d7a0",
+    "url": "/css/app.4dd73c3a.css"
   },
   {
-    "revision": "f3b42ff1ccb8c2febf4f",
-    "url": "/js/app.087df8cd.js"
+    "revision": "1372fb22083e3a87d7a0",
+    "url": "/js/app.dcbf40a4.js"
   },
   {
     "revision": "10da107bc51738cdd876",
@@ -136,7 +136,7 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.4478b4d7.svg"
   },
   {
-    "revision": "d89326e6883eb79ba48a75569e1d68a6",
+    "revision": "5d18e364c9ab31e358181728ad8d6fb1",
     "url": "/index.html"
   },
   {
