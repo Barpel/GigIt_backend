@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const session = require('express-session')
 
 const app = express()
+app.use(bodyParser.json())
 app.use(cors({
     origin: ['http://localhost:8080'],
     credentials: true // enable set cookie

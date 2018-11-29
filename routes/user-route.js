@@ -3,7 +3,6 @@ const baseUrl = '/user'
 
 function addRoutes(app) {
     app.get(`${baseUrl}`, (req, res) => {
-        // res.send('USER!')
         userService.query()
             .then(users => res.json(users))
     })
@@ -14,8 +13,8 @@ function addRoutes(app) {
             .then(user => res.json(user))
     })
 
-    app.get(`${baseUrl}/login`, (req, res) => {
-        const userCreds = req.params.userCreds
+    app.post(`${baseUrl}/login`, (req, res) => {
+        const userCreds = req.body
         userService.checkLogin(userCreds)
             .then(user => res.json(user))
     })
