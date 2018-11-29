@@ -23,7 +23,7 @@ function addGigRoutes(app) {
     })
 
     //add gig
-    app.post('/gig/:gigId', (req, res) => {
+    app.post('/gig', (req, res) => {
         const gig = req.body
         gigService.add(gig)
             .then(gig=> res.json(gig))
