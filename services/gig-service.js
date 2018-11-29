@@ -11,6 +11,7 @@ module.exports = {
 }
 
 function query() {
+    console.log('backend!')
     return mongoService.connect()
         .then(db => {
             const collection = db.collection('gig_db')

@@ -8,8 +8,8 @@ function addRoutes(app) {
             .then(users => res.json(users))
     })
 
-    app.get(`${baseUrl}/:id`, (req, res) => {
-        const userId = req.params._id
+    app.get(`${baseUrl}/:userId`, (req, res) => {
+        const userId = req.params.userId
         userService.getById(userId)
             .then(user => res.json(user))
     })

@@ -6,7 +6,7 @@ function connectToMongo() {
     const MongoClient = require('mongodb').MongoClient;
 
     const url = (!process.env.PORT) ?
-        'mongodb://localhost:27017/gig_db' : 'mlab url'
+        'mongodb://localhost:27017/gig_db' : 'mongodb://bar:gigit3@ds111390.mlab.com:11390/gig_db'
 
     return MongoClient.connect(url)
         .then(client => {
