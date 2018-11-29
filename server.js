@@ -32,5 +32,5 @@ const addUserRoutes = require('./routes/user-route')
 addGigRoutes(app)
 addUserRoutes(app)
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`You're now on p-po-por-port ${PORT}`))

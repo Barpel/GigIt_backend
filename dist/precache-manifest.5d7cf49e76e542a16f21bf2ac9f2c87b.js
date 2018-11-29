@@ -8,20 +8,20 @@ self.__precacheManifest = [
     "url": "/js/about.840fc2cb.js"
   },
   {
-    "revision": "1372fb22083e3a87d7a0",
-    "url": "/css/app.4dd73c3a.css"
+    "revision": "6a6d61fab8234c73f09d",
+    "url": "/css/app.96d575eb.css"
   },
   {
-    "revision": "1372fb22083e3a87d7a0",
-    "url": "/js/app.dcbf40a4.js"
+    "revision": "6a6d61fab8234c73f09d",
+    "url": "/js/app.cf987efd.js"
   },
   {
-    "revision": "10da107bc51738cdd876",
+    "revision": "62cd1cd6b290c30d0482",
     "url": "/css/chunk-vendors.a62aa716.css"
   },
   {
-    "revision": "10da107bc51738cdd876",
-    "url": "/js/chunk-vendors.f02d6705.js"
+    "revision": "62cd1cd6b290c30d0482",
+    "url": "/js/chunk-vendors.b6785bb0.js"
   },
   {
     "revision": "9991dd43bb28f507fa1b6d9d0cd98f60",
@@ -136,7 +136,7 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.4478b4d7.svg"
   },
   {
-    "revision": "5d18e364c9ab31e358181728ad8d6fb1",
+    "revision": "86000260da4165083ccc54c85245dd25",
     "url": "/index.html"
   },
   {
