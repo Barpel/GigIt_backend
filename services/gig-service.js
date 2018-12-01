@@ -42,9 +42,8 @@ function add(gig) {
         .then(db => {
             const collection = db.collection('gig')
             return collection.insertOne(gig)
-                .then(result => {
-                    return gig
-                })
+                .then(gig => gig.ops[0])
+                    // console.log('mongo returned:', gig.ops[0])
         })
 }
 
