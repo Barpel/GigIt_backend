@@ -31,7 +31,14 @@ function login(userCreds) {
 function add(userData) {
     var user = JSON.parse(JSON.stringify(userData))
     return mongoService.connect()
-        .then(db => db.collection('user').insertOne(user))
+        .then(db => {
+            const collection = db.collection('user')
+            return collection.findOne({username: user.username})
+                .then(res => {
+                    if(!res) return collection.insertOne(user)
+                    else return Promise.reject('username taken')
+                })
+        })
         .then(res => {
             user._id = res.insertedId
             return user

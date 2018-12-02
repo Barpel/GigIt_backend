@@ -17,8 +17,11 @@ function addRoutes(app) {
         const userCreds = req.body
         userService.login(userCreds)
             .then(user => {
-                if(!user) res.status(400).send('Wrong Creds')
-                else res.json(user)
+                if(user) {
+                    req.session.user = user                    
+                    res.json(user)
+                }
+                else res.status(400).send('Wrong Creds')                
             })
     })
 
@@ -32,7 +35,11 @@ function addRoutes(app) {
         const user = req.body;
         userService.add(user)
             .then(user => {
+                req.session.user = user
                 res.json(user)
+            })
+            .catch(err => {
+                res.status(401).send('username taken')
             })
     })
 
