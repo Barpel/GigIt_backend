@@ -7,19 +7,23 @@ module.exports = {
     remove,
     getById,
     add,
-    update
+    update,
+
 }
 
-function query(category) {
-    console.log('backend service',category)
-
-    console.log('backend!')
-    return mongoService.connect()
-        .then(db => {
-            const collection = db.collection('gig')
-            return collection.find().toArray()
+function query(filter) {
+    var criteria = {}
+    if(filter.byTitle) criteria = {"details.title":{$regex : `.*${filter.byTitle}.*`}}
+    if(filter.byCategory) criteria.category = filter.byCategory
+    console.log('criteria' , criteria);
+        return mongoService.connect()
+        .then(db=>{
+             const collection = db.collection('gig')
+             return collection.find(criteria).toArray()
         })
 }
+
+
 
 function remove(gigId) {
     gigId = new ObjectId(gigId)
@@ -45,7 +49,6 @@ function add(gig) {
             const collection = db.collection('gig')
             return collection.insertOne(gig)
                 .then(gig => gig.ops[0])
-                    // console.log('mongo returned:', gig.ops[0])
         })
 }
 

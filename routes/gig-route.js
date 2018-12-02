@@ -5,11 +5,17 @@ const baseUrl = '/api/gig'
 function addGigRoutes(app) {
 
     //gig list
-    app.get(baseUrl, (req, res) => {
-        // console.log('the first get')
-        gigService.query()
+    app.get(`${baseUrl}`, (req, res) => {   
+        console.log('testing the query params',req.query)
+        gigService.query(req.query)
             .then(gigs => res.json(gigs))
     })
+
+    // app.get(`${baseUrl}/category/:categoryName`, (req, res)=>{
+    //     const category = req.params.categoryName
+    //     gigService.query(category)
+    //     .then(gigs => res.json(gigs))
+    // })
 
     //single gig
     app.get(`${baseUrl}/:gigId`, (req, res) => {
@@ -29,7 +35,7 @@ function addGigRoutes(app) {
     app.post(baseUrl, (req, res) => {
         const gig = req.body
         gigService.add(gig)
-            .then(gig=> res.json(gig))
+            .then(gig => res.json(gig))
     })
 
     //update gig
