@@ -13,7 +13,7 @@ module.exports = {
 
 function query(filter) {
     var criteria = {}
-    if(filter.byTitle) criteria = {"details.title":{$regex : `.*${filter.byTitle}.*`}}
+    if(filter.byTitle) criteria = {"details.title":{$regex : `.*${filter.byTitle}.*`,$options: "i"}}
     if(filter.byCategory) criteria.category = filter.byCategory
         return mongoService.connect()
         .then(db=>{

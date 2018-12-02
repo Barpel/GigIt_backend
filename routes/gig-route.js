@@ -10,11 +10,11 @@ function addGigRoutes(app) {
             .then(gigs => res.json(gigs))
     })
 
-    // app.get(`${baseUrl}/category/:categoryName`, (req, res)=>{
-    //     const category = req.params.categoryName
-    //     gigService.query(category)
-    //     .then(gigs => res.json(gigs))
-    // })
+    app.get(`${baseUrl}/category/:categoryName`, (req, res)=>{
+        const category = req.params.categoryName
+        gigService.query(req.query)
+        .then(gigs => res.json(gigs))
+    })
 
     //single gig
     app.get(`${baseUrl}/:gigId`, (req, res) => {
