@@ -5,13 +5,8 @@ const baseUrl = '/api/gig'
 function addGigRoutes(app) {
 
     //gig list
-<<<<<<< HEAD
-    app.get(baseUrl, (req, res) => {
-        gigService.query()
-=======
     app.get(`${baseUrl}`, (req, res) => {   
         gigService.query(req.query)
->>>>>>> c925ec49ab6a04586273eff951c542fb0b0fdd07
             .then(gigs => res.json(gigs))
     })
 

@@ -9,12 +9,7 @@ module.exports = {
     add,
     update,
 
-<<<<<<< HEAD
-function query(category) {
-    console.log('query by category:',category)
-=======
 }
->>>>>>> c925ec49ab6a04586273eff951c542fb0b0fdd07
 
 function query(filter) {
     var criteria = {}
