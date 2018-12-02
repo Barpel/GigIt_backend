@@ -15,8 +15,11 @@ function addRoutes(app) {
 
     app.post(`${baseUrl}/login`, (req, res) => {
         const userCreds = req.body
-        userService.checkLogin(userCreds)
-            .then(user => res.json(user))
+        userService.login(userCreds)
+            .then(user => {
+                if(!user) res.status(400).send('Wrong Creds')
+                else res.json(user)
+            })
     })
 
     app.delete(`${baseUrl}/:userId`, (req, res) => {

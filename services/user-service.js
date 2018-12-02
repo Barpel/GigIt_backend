@@ -1,7 +1,15 @@
 'use strict'
 const mongoService = require('./mongo-service')
-
 const ObjectId = require('mongodb').ObjectId
+
+module.exports = {
+    query,
+    getById,
+    login,
+    add,
+    remove,
+    update
+}
 
 function query() {
     console.log('UHU im here BACKEND')
@@ -15,7 +23,7 @@ function getById(userId) {
         .then(db => db.collection('user').findOne(_id))
 }
 
-function checkLogin(userCreds) {
+function login(userCreds) {
     return mongoService.connect()
         .then(db => db.collection('user').findOne(userCreds))
 }
@@ -49,13 +57,4 @@ function update(user) {
                     return user
                 })
         })
-}
-
-module.exports = {
-    query,
-    getById,
-    checkLogin,
-    add,
-    remove,
-    update
 }
