@@ -15,7 +15,6 @@ function query(filter) {
     var criteria = {}
     if(filter.byTitle) criteria = {"details.title":{$regex : `.*${filter.byTitle}.*`}}
     if(filter.byCategory) criteria.category = filter.byCategory
-    console.log('criteria' , criteria);
         return mongoService.connect()
         .then(db=>{
              const collection = db.collection('gig')
