@@ -10,7 +10,9 @@ module.exports = {
     update
 }
 
-function query() {
+function query(category) {
+    console.log('backend service',category)
+
     console.log('backend!')
     return mongoService.connect()
         .then(db => {

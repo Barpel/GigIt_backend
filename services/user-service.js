@@ -4,6 +4,7 @@ const mongoService = require('./mongo-service')
 const ObjectId = require('mongodb').ObjectId
 
 function query() {
+    console.log('UHU im here BACKEND')
     return mongoService.connect()
         .then(db => db.collection('user').find().toArray())
 }
