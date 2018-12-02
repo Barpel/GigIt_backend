@@ -7,19 +7,27 @@ module.exports = {
     remove,
     getById,
     add,
-    update
-}
+    update,
 
+<<<<<<< HEAD
 function query(category) {
     console.log('query by category:',category)
+=======
+}
+>>>>>>> c925ec49ab6a04586273eff951c542fb0b0fdd07
 
-    console.log('backend!')
-    return mongoService.connect()
-        .then(db => {
-            const collection = db.collection('gig')
-            return collection.find().toArray()
+function query(filter) {
+    var criteria = {}
+    if(filter.byTitle) criteria = {"details.title":{$regex : `.*${filter.byTitle}.*`}}
+    if(filter.byCategory) criteria.category = filter.byCategory
+        return mongoService.connect()
+        .then(db=>{
+             const collection = db.collection('gig')
+             return collection.find(criteria).toArray()
         })
 }
+
+
 
 function remove(gigId) {
     gigId = new ObjectId(gigId)
