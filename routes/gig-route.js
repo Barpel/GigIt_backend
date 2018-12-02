@@ -6,7 +6,6 @@ function addGigRoutes(app) {
 
     //gig list
     app.get(baseUrl, (req, res) => {
-        // console.log('the first get')
         gigService.query()
             .then(gigs => res.json(gigs))
     })

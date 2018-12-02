@@ -10,7 +10,9 @@ function addRoutes(app) {
     app.get(`${baseUrl}/:userId`, (req, res) => {
         const userId = req.params.userId
         userService.getById(userId)
-            .then(user => res.json(user))
+            .then(user => {
+                res.json(user)
+            })
     })
 
     app.post(`${baseUrl}/login`, (req, res) => {
@@ -18,11 +20,15 @@ function addRoutes(app) {
         userService.login(userCreds)
             .then(user => {
                 if(user) {
-                    req.session.user = user                    
+                    req.session.user = user
                     res.json(user)
                 }
                 else res.status(400).send('Wrong Creds')                
             })
+    })
+
+    app.get(`${baseUrl}/logout`, (req,res) => {
+        req.session.user = null
     })
 
     app.delete(`${baseUrl}/:userId`, (req, res) => {
@@ -31,7 +37,7 @@ function addRoutes(app) {
             .then(() => res.end(`User ${userId} Deleted `))
     })
 
-    app.post(`${baseUrl}`, (req, res) => {
+    app.post(baseUrl, (req, res) => {
         const user = req.body;
         userService.add(user)
             .then(user => {

@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function query(category) {
-    console.log('backend service',category)
+    console.log('query by category:',category)
 
     console.log('backend!')
     return mongoService.connect()
@@ -45,7 +45,6 @@ function add(gig) {
             const collection = db.collection('gig')
             return collection.insertOne(gig)
                 .then(gig => gig.ops[0])
-                    // console.log('mongo returned:', gig.ops[0])
         })
 }
 

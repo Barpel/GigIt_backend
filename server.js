@@ -22,7 +22,9 @@ app.use(session({
 }))
 
 
-app.get('/', (req, res) => {
+app.get('/api/hi', (req, res) => {
+    req.session.test = 'tesssttt'
+    console.log('on hi',req.session)
     res.send('HI!!')
 })
 const addGigRoutes = require('./routes/gig-route')

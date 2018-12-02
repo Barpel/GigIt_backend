@@ -12,7 +12,6 @@ module.exports = {
 }
 
 function query() {
-    console.log('UHU im here BACKEND')
     return mongoService.connect()
         .then(db => db.collection('user').find().toArray())
 }
