@@ -7,7 +7,7 @@ function addGigRoutes(app) {
     //gig list
     app.get(`${baseUrl}`, (req, res) => {   
         gigService.query(req.query)
-            .then(gigs => res.json(gigs))
+            .then(gigs => {res.json(gigs)})
     })
 
     app.get(`${baseUrl}/category/:categoryName`, (req, res)=>{
