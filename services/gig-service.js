@@ -12,13 +12,21 @@ module.exports = {
 }
 
 function query(filter) {
+    // if (filter = {}) {
+    //     console.log('hey')
+    //     return mongoService.connect()
+    //         .then(db => {
+    //             const collection = db.collection('gig')
+    //             return collection.find().toArray()
+    //         })
+    // }
     var criteria = {}
-    if(filter.byTitle) criteria = {"details.title":{$regex : `.*${filter.byTitle}.*`,$options: "i"}}
-    if(filter.byCategory) criteria.category = filter.byCategory
-        return mongoService.connect()
-        .then(db=>{
-             const collection = db.collection('gig')
-             return collection.find(criteria).toArray()
+    if (filter.byTitle) criteria = { "details.title": { $regex: `.*${filter.byTitle}.*`, $options: "i" } }
+    if (filter.byCategory) criteria.category = filter.byCategory
+    return mongoService.connect()
+        .then(db => {
+            const collection = db.collection('gig')
+            return collection.find(criteria).toArray()
         })
 }
 
