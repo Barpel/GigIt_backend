@@ -24,6 +24,9 @@ function connectSockets(io) {
         socket.on('emitToUser', function (eventMsg, userId) {
             io.to('userSocket'+userId).emit('eventMsgToUser', eventMsg)
         })
+        socket.on('emitNewChatMsg', function (eventMsg, userId) {
+            io.to('userSocket'+userId).emit('emitChatMsgToUser', eventMsg)
+        })
 
         socket.on('disconnect', function () {
             console.log('user disconnected')
