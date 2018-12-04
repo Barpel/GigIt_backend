@@ -9,8 +9,6 @@ function connectSockets(io) {
         socket.on('sendMsg', function (msg, chatId) {
             chatService.getById(chatId)
                 .then(chat => {
-                    console.log(chat)
-                    // chatToUpdate = chat
                     chat.msgs.push(msg)
                     socket.join('chatRoom' + chatId)
                     io.to('chatRoom' + chatId).emit('sentMsg', {msg, chatId})
@@ -20,8 +18,6 @@ function connectSockets(io) {
             
         });
         socket.on('disconnect', function () {
-            // console.log(chatToUpdate)
-            // if(chatToUpdate) chatService.update(chatToUpdate)
             console.log('user disconnected')
         });
     });
