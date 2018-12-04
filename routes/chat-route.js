@@ -18,8 +18,6 @@ function addChatRoutes(app) {
     //single chat
     app.get(`${baseUrl}/:chatId`, (req, res) => {
         const chatId = req.params.chatId
-        console.log('in chat byID')
-        console.log(chatId)
         socketService.getById(chatId)
             .then(chat => res.json(chat))
     })
