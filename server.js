@@ -5,6 +5,7 @@ const app = express()
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const cors = require('cors')
+// const history = require('connect-history-api-fallback'); //SHOULD ABLE TO REFRESH ON HEROKU
 
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -15,6 +16,11 @@ app.use(cors({
     origin: ['http://localhost:8080'],
     credentials: true // enable set cookie
 }));
+// app.use(history({                //SHOULD ABLE TO REFRESH ON HEROKU
+//     rewrites: [
+//       { from: /\/api\//, to: '/index.html'}  //HAVN'T CHECKED IF REGEXP AND PATH ARE RIGHT
+//     ]
+//   }));
 app.use(express.static('dist'))
 app.use(cookieParser());
 app.use(session({

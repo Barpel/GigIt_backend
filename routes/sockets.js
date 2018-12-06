@@ -25,6 +25,8 @@ function connectSockets(io) {
             io.to('userSocket'+userId).emit('eventMsgToUser', eventMsg)
         })
         socket.on('emitNewChatMsg', function (eventMsg, userId) {
+            console.log('sending',eventMsg)
+            console.log('to:',eventMsg)
             io.to('userSocket'+userId).emit('emitChatMsgToUser', eventMsg)
         })
 
