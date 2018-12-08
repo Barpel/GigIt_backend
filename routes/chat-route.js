@@ -4,7 +4,7 @@ const baseUrl = '/api/chat'
 
 function addChatRoutes(app) {
     //chat list
-    app.get(`${baseUrl}`, (req, res) => {   
+    app.get(`${baseUrl}`, (req, res) => {  
         socketService.query(req.query)
             .then(chats => res.json(chats))
     })

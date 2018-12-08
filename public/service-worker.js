@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.c61b078d4be87051617d5e3adf78f0c0.js"
+  "/precache-manifest.d612bdb8f2e5eac3b101cdf7f39d7139.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "gigit"});
