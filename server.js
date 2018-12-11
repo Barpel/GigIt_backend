@@ -25,9 +25,6 @@ app.use(session({
     cookie: { secure: false, maxAge: 604800000 }
 }))
 
-
-
-
 app.get('/api/hi', (req, res) => {
     console.log('on hi', req.session)
     res.send('HI!!')
