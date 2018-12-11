@@ -17,11 +17,12 @@ app.use(cors({
     credentials: true // enable set cookie
 }));
 app.use(cookieParser());
+
 app.use(session({
     secret: 'gotta gigit',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }
+    cookie: { secure: false, maxAge: 604800000 }
 }))
 
 

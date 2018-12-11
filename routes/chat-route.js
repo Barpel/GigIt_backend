@@ -39,6 +39,7 @@ function addChatRoutes(app) {
     //update chat
     app.put(`${baseUrl}/:chatId`, (req, res) => {
         const chat = req.body
+        console.log(chat)
         socketService.update(chat)
             .then(chat => res.json(chat))
     })
