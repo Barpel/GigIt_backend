@@ -5,6 +5,7 @@ function connectSockets(io) {
 
     io.on('connection', function (socket) {
         console.log('a user connected')
+        
         socket.on('sendMsg', function (msg, chatId) {
             chatService.getById(chatId)
                 .then(chat => {
@@ -22,12 +23,17 @@ function connectSockets(io) {
             socket.join('userSocket' + userId)
         })
         socket.on('emitToUser', function (eventMsg, userId) {
-            io.to('userSocket'+userId).emit('eventMsgToUser', eventMsg)
+            console.log('emittiingL',eventMsg, userId)
+            io.to('userSocket'+userId).emit('emitEventToUser', eventMsg)
         })
         socket.on('emitNewChatMsg', function (eventMsg, userId) {
             console.log('sending',eventMsg)
-            console.log('to:',eventMsg)
             io.to('userSocket'+userId).emit('emitChatMsgToUser', eventMsg)
+        })
+
+        socket.on('logoutUser', function (userId) {
+            console.log('leaving socket', userId)
+            socket.leave('userSocket' + userId)
         })
 
         socket.on('disconnect', function () {

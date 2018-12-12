@@ -6,7 +6,6 @@ function addGigRoutes(app) {
 
     //gig list
     app.get(`${baseUrl}`, (req, res) => { 
-        console.log('reqparams',req.query)
         if(req.query.isActive) req.query.isActive = true
         else req.query.isActive = false
         var filterObj = {};

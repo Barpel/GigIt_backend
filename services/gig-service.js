@@ -21,7 +21,6 @@ function query(filter) {
     //         })
     // }
     var criteria = {}
-    console.log('Gig Service',filter)
     if (filter.byTitle) criteria = { "details.title": { $regex: `.*${filter.byTitle}.*`, $options: "i" } }
     if (filter.byCategory) criteria.category = filter.byCategory
     if (filter.isActive) criteria.isActive = filter.isActive
