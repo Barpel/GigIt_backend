@@ -17,13 +17,15 @@ app.use(cors({
     credentials: true // enable set cookie
 }));
 app.use(cookieParser());
-
 app.use(session({
     secret: 'gotta gigit',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false, maxAge: 604800000 }
+    cookie: { secure: false }
 }))
+
+
+
 
 app.get('/api/hi', (req, res) => {
     console.log('on hi', req.session)

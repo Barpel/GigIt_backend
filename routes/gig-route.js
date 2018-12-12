@@ -5,7 +5,17 @@ const baseUrl = '/api/gig'
 function addGigRoutes(app) {
 
     //gig list
-    app.get(`${baseUrl}`, (req, res) => {   
+    app.get(`${baseUrl}`, (req, res) => { 
+        console.log('reqparams',req.query)
+        if(req.query.isActive) req.query.isActive = true
+        else req.query.isActive = false
+        var filterObj = {};
+        // for(let key in req.query){
+        //     if(req.query[key]==='true') filterObj[key]=true;
+        //     else if (req.query[key]==='false') filterObj[key]=false;
+        //     else filterObj[key] === req.query[key];
+        // }
+        // console.log('Gig Routes',filterObj)
         gigService.query(req.query)
             .then(gigs => {res.json(gigs)})
     })
