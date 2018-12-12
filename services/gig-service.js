@@ -30,6 +30,19 @@ function query(filter) {
         })
 }
 
+// ---- GET ALL AGGREGATION TO JOIN USER ----
+// db.getCollection('gig').aggregate([
+//     {
+//       $lookup:
+//         {
+//           from: "user",
+//           localField: "publisherId",
+//           foreignField: "_id",
+//           as: "publisher"
+//         }
+//    }
+//  ])
+
 
 
 function remove(gigId) {
@@ -50,7 +63,27 @@ function getById(gigId) {
         })
 }
 
+// ---- GET BY ID AGGREGATION TO JOIN USER ----
+// db.getCollection('gig').aggregate(
+//     [ { $match :
+//         { _id : ObjectId("5c1043a9e5fc5b38705e1fe5")} //could be any other id
+//         },
+//        {
+//          $lookup:
+//            {
+//              from: "user",
+//              localField: "publisherId",
+//              foreignField: "_id",
+//              as: "publisher"
+//            }
+//       }
+//         ]
+//    )
+
 function add(gig) {
+    gig.publisherId = new ObjectId(gig.publisherId)
+    console.log('new gig is:', gig)
+    console.log('new gigPublisher is:', gig.publisherId)
     return mongoService.connect()
         .then(db => {
             const collection = db.collection('gig')
