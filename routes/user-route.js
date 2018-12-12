@@ -7,6 +7,11 @@ function addRoutes(app) {
             .then(users => res.json(users))
     })
 
+    app.get(`${baseUrl}/logout`, (req,res) => {
+        req.session.destroy()
+        res.json()
+    })
+
     app.get(`${baseUrl}/:userId`, (req, res) => {
         const userId = req.params.userId
         userService.getById(userId)
@@ -17,19 +22,20 @@ function addRoutes(app) {
 
     app.post(`${baseUrl}/login`, (req, res) => {
         const userCreds = req.body
-        userService.login(userCreds)
-            .then(user => {
-                if(user) {
-                    req.session.user = user
-                    res.json(user)
-                }
-                else res.status(400).send('Wrong Creds')                
-            })
+        if(!userCreds.password) res.json(req.session.user)
+        else {
+            userService.login(userCreds)
+                .then(user => {
+                    if(user) {
+                        req.session.user = user
+                        res.json(user)
+                    }
+                    else res.status(400).send('Wrong Creds')                
+                })
+        }
     })
 
-    app.get(`${baseUrl}/logout`, (req,res) => {
-        req.session.user = null
-    })
+  
 
     app.delete(`${baseUrl}/:userId`, (req, res) => {
         const userId = req.params.userId;
