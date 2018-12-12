@@ -17,7 +17,12 @@ function addRoutes(app) {
 
     app.post(`${baseUrl}/login`, (req, res) => {
         const userCreds = req.body
-        userService.login(userCreds)
+        if(!userCreds.password) {
+            var user = req.session.user
+            res.json(user)
+        }
+        else {
+            userService.login(userCreds)
             .then(user => {
                 if(user) {
                     req.session.user = user
@@ -25,10 +30,12 @@ function addRoutes(app) {
                 }
                 else res.status(400).send('Wrong Creds')                
             })
+        }
     })
 
-    app.get(`${baseUrl}/logout`, (req,res) => {
-        req.session.user = null
+    app.post(`${baseUrl}/logout`, (req,res) => {
+        req.session.destroy()
+        res.end()   
     })
 
     app.delete(`${baseUrl}/:userId`, (req, res) => {
