@@ -1,10 +1,13 @@
 const chatService = require('../services/chat-service')
 
-var gChats = chatService.query()
 function connectSockets(io) {
 
     io.on('connection', function (socket) {
         console.log('a user connected')
+
+        socket.on('connectToChat', function (chatId) {
+            socket.join('chatRoom' + chatId)
+        })
         
         socket.on('sendMsg', function (msg, chatId) {
             chatService.getById(chatId)
@@ -14,8 +17,6 @@ function connectSockets(io) {
                     io.to('chatRoom' + chatId).emit('sentMsg', { msg, chatId })
                     chatService.update(chat)
                 })
-
-
         });
 
         socket.on('newUserSocket', function (userId) {
@@ -23,11 +24,9 @@ function connectSockets(io) {
             socket.join('userSocket' + userId)
         })
         socket.on('emitToUser', function (eventMsg, userId) {
-            console.log('emittiingL',eventMsg, userId)
             io.to('userSocket'+userId).emit('emitEventToUser', eventMsg)
         })
         socket.on('emitNewChatMsg', function (eventMsg, userId) {
-            console.log('sending',eventMsg)
             io.to('userSocket'+userId).emit('emitChatMsgToUser', eventMsg)
         })
 

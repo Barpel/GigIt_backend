@@ -28,7 +28,6 @@ app.use(session({
 
 
 app.get('/api/hi', (req, res) => {
-    console.log('on hi', req.session)
     res.send('HI!!')
 })
 const connectSockets = require ('./routes/sockets')

@@ -83,8 +83,6 @@ function getById(gigId) {
 
 function add(gig) {
     gig.publisherId = new ObjectId(gig.publisherId)
-    console.log('new gig is:', gig)
-    console.log('new gigPublisher is:', gig.publisherId)
     return mongoService.connect()
         .then(db => {
             const collection = db.collection('gig')
