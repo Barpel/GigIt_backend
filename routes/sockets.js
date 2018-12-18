@@ -19,10 +19,20 @@ function connectSockets(io) {
                 })
         });
 
+
+
+
+
+        //OPEN A SOCKET ROOM FOR LOGGED USER
         socket.on('newUserSocket', function (userId) {
-            console.log('opening new socket for:', userId)
             socket.join('userSocket' + userId)
         })
+
+
+
+
+
+
         socket.on('emitToUser', function (eventMsg, userId) {
             io.to('userSocket'+userId).emit('emitEventToUser', eventMsg)
         })
@@ -31,7 +41,6 @@ function connectSockets(io) {
         })
 
         socket.on('logoutUser', function (userId) {
-            console.log('leaving socket', userId)
             socket.leave('userSocket' + userId)
         })
 
